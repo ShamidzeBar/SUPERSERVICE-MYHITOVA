@@ -1,0 +1,104 @@
+﻿<Page x:Class="SUPERSERVICE_MYHITOVA.ServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SUPERSERVICE_MYHITOVA"
+      mc:Ignorable="d" 
+      d:DesignHeight="480" d:DesignWidth="800"
+      Title="ServicePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <ListView Name="ServiceListView" Grid.Row="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="170"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                            <TextBlock Text="ID: "></TextBlock>
+                            <TextBlock Text="{Binding ID}"></TextBlock>
+                            <TextBlock Text=" | "></TextBlock>
+                            <TextBlock Text="{Binding LastName}"></TextBlock>
+                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="{Binding FirstName}"></TextBlock>
+                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="{Binding Patronymic}"></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                            <TextBlock Text="День рождения: "></TextBlock>
+                            <TextBlock Text="{Binding GetBirthday}"></TextBlock>
+                            <TextBlock Text=" | Дата регистрации: "></TextBlock>
+                            <TextBlock Text="{Binding GetReg}"></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                            <TextBlock Text="{Binding Phone}"></TextBlock>
+                            <TextBlock Text=" | "></TextBlock>
+                            <TextBlock Text="{Binding Email}"></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                            <TextBlock Text="{Binding LastVisit}"></TextBlock>
+                            <TextBlock Text=" | "></TextBlock>
+                            <TextBlock Text="{Binding CountVisit}"></TextBlock>
+                            <TextBlock Text=" посещений за все время"></TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,25,0">
+                <Button Name="By10" Click="By10_Click" Content="10"  Height="20" Width="35" Margin="0,0,5,0" ></Button>
+                <Button Name="By50" Click="By50_Click" Content="50"  Height="20" Width="35" Margin="0,0,5,0"></Button>
+                <Button Name="By200" Click="By200_Click" Content="200"  Height="20" Width="35" Margin="0,0,5,0"></Button>
+                <Button Name="AllRecords" Click="AllRecords_Click" Content="Все"  Height="20" Width="35" ></Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,80,0" VerticalAlignment="Center">
+                <TextBlock Text="0" Name="RemainPages" Width="15"></TextBlock>
+                <TextBlock Text=" страниц из " Width="70"></TextBlock>
+                <TextBlock Text="0" Name="InitPages" Width="15"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Name="GoLeftPage" Click="GoLeftPage_Click" Content="&lt;&lt;-" Width="25" Height="20" Margin="0,0,10,0"></Button>
+                <Button Name="GoRightPage" Click="GoRightPage_Click" Content="->>" Width="25" Height="20" ></Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="240,0,0,0">
+                <TextBlock Text="0" Name="RemainRecords"></TextBlock>
+                <TextBlock Text=" записей из "></TextBlock>
+                <TextBlock Text="0" Name="InitRecords"></TextBlock>
+            </StackPanel>
+
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Page>
