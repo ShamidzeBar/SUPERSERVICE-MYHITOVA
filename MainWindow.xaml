@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SUPERSERVICE_MYHITOVA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Icon="/Resources/school_logo.png">
     <Grid>
-        <Image Source="Resources/school_logo.png" Width="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
-        <Frame Name="MainFrame" ContentRendered="MainFrame_ContentRendered"></Frame>
-        <Button Name="BackBtn" Click="BackBtn_Click" Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" Height="30" Margin="10"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Лангуаге мухаченко" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="20" ></TextBlock>
+        <Image Source="/Resources/school_logo.png" Height="75" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
+        <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"></Frame>
+        <Button Grid.Row="0" Name="BackBtn" Click="BackBtn_Click" Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" Height="30" Margin="10"></Button>
     </Grid>
+
 </Window>

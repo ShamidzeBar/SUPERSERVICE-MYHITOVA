@@ -189,8 +189,8 @@
       <DependentUpon>MuhitovModel.edmx</DependentUpon>
       <LastGenOutput>MuhitovModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\school_logo.ico" />
-    <None Include="Resources\school_logo.png" />
+    <Resource Include="Resources\school_logo.ico" />
+    <Resource Include="Resources\school_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
